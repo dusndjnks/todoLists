@@ -13,7 +13,7 @@ const titleSchema = new mongoose.Schema({
     },
     status : {
         type : String,
-        required : true,
+        // required : true,
         enum: ['pending', 'in-progress', 'completed']
     }
 },{

@@ -1,6 +1,6 @@
-import { config } from "./src/config/config.js"
 import app from "./src/app.js"
 import mongoose from "mongoose"
+import config from "./src/config/config.js"
 
 
 (async () => {

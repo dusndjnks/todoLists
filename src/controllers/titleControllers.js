@@ -44,7 +44,6 @@ export const createToDo = async (req, res) => {
 };
 
 
-
 export const deleteTask = async (req, res) => {
     try {
         const { id } = req.params;
@@ -84,9 +83,6 @@ export const deleteTask = async (req, res) => {
         });
     }
 };
-
-
-
 
 
 export const updateTasks = async (req, res) => {
@@ -137,3 +133,16 @@ export const updateTasks = async (req, res) => {
         });
     }
 };
+
+export const getSingleTasks = async (req,res) => {
+    try{
+
+    }catch(error){
+        console.log(`Error in getting single task ${error}`);
+        res.status(500).json({
+            success : false,
+            message : "Error in getting single task",
+            error
+        })
+    }
+}

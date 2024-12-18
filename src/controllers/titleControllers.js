@@ -134,9 +134,37 @@ export const updateTasks = async (req, res) => {
     }
 };
 
+export const getAllTasks = async (req,res) => {
+    try{
+        const task = await Title.find({})
+        res.status(200).json({
+            success : true,
+            message : "All Tasks are fetched successfuly",
+            count  : task.length,
+            task
+        })
+    }catch(error){
+        console.log(`Error in getting single task ${error}`);
+        res.status(500).json({
+            success : false,
+            message : "Error in getting single task",
+            error
+        })
+    }
+}
+
+
+
+
 export const getSingleTasks = async (req,res) => {
     try{
-
+        const task = await Title.findOne({slug : req.params.slug})
+        res.status(200).json({
+            success : true,
+            message : "Current Task is fetched successfuly",
+            count  : task.length,
+            task
+        })
     }catch(error){
         console.log(`Error in getting single task ${error}`);
         res.status(500).json({
